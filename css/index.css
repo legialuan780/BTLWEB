@@ -358,6 +358,7 @@ a {
     overflow-x: hidden;
     position: fixed;
     top: 60px;
+    z-index: 1000;
 }
 
 .left-sidebar::-webkit-scrollbar, .right-sidebar::-webkit-scrollbar{
@@ -466,9 +467,11 @@ a {
     background-color: rgb(240, 237, 237);
     position: relative;
     left: 30%;
+    top: 60px;
     width: 500px;
-    height: 100vh;
+    height: 100%;
     /* overflow: scroll; */
+
 }
 /* RIGHT ****************************************************************/
 .right-sidebar {
@@ -480,6 +483,7 @@ a {
     height: 90vh;
     overflow-y: hidden;
     overflow-x: hidden;
+    z-index: 1000;
 
 }
 .right-sidebar:hover{
