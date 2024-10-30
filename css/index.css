@@ -15,18 +15,18 @@ a {
     color: black;
     text-decoration: none;
 }
-@media (max-width:1024px){
-    .left-sidebar, .right-sidebar,.header-wrap .header-mid{
+
+.show{
+    display: flex;
+}
+/* @media (max-width:1000px){
+    .left-sidebar, .right-sidebar{
         display: none;
     }
     .container .center-sidebar{
         position: relative;
-        left: 10%;
     }
-}
-.show{
-    display: flex;
-}
+} */
 /* header *************************************************************************************************************/
 .header-wrap{
     width: 100%;
@@ -1119,12 +1119,13 @@ img{
     position: relative;
 }
 .like1{
-    opacity: 1;
+    display: flex;
 }
 .like2{
-    position: absolute;
-    left: 0;
-    opacity: 0;
+    display: none;
+}
+.hide-text{
+    display: none;
 }
 .comment{
 
@@ -1259,6 +1260,7 @@ img{
 }
 .online-list .online img {
     width: 30px;
+    height: 30px;
     border-radius: 50%;
 }
 /* .imp-links a i, img {
