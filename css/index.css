@@ -19,6 +19,9 @@ a {
 .show{
     display: flex;
 }
+.hidden{
+    display: none;
+}
 /* @media (max-width:1000px){
     .left-sidebar, .right-sidebar{
         display: none;
@@ -401,6 +404,7 @@ a {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
 }
 .notice-text p span{
@@ -470,6 +474,7 @@ a {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     margin-left: 5px;
 }
 .chat-text{
@@ -570,22 +575,35 @@ a {
     border-bottom: 1px solid lightgrey;
     margin-top: 10px;
 }
-.imp-links a{
+.imp-links a,#showMore-imp-links, #showLess-imp-links{
     padding: 3px 0;
 }
-.imp-links a ,.shortcut-links a{
+.imp-links a ,.shortcut-links a,#showMore-imp-links, #showLess-imp-links{
     text-decoration: none;
     display: flex;
     align-items: center;
     border-radius: 5px;
     width: 100%;
 }
-.imp-links a:hover ,.shortcut-links a:hover{
-    background-color: #E4E6E9;
+.imp-links a:hover ,.shortcut-links a:hover, #showMore-imp-links:hover, #showLess-imp-links:hover{
+    background-color: #e4e6e99d;
 }
 .imp-links a:last-child.shortcut-links a:last-child{
     margin-bottom: 0;
 }
+
+/* BEGIN HIDDEN IMP-LINKS */
+
+#hidden-imp-links{
+    display: none;
+}
+#showMore-imp-links, #showLess-imp-links{
+    display: flex;
+}
+#showMore-imp-links .add-icon, #showLess-imp-links .add-icon{
+    margin: 5px 10px;
+}
+/* END HIDDEN IMP-LINKS */
 
 .shortcut-links a img{
     width: 30px;
@@ -824,15 +842,13 @@ img{
     padding: 0px 10px;
     border-radius: 5px;
 }
-.create-status form{
-    padding:  0 15px;
-}
 .create-status form input{
     width: 100%;
     font-size: 22px;
     border: none;
     outline: none;
     box-sizing: border-box;
+    padding: 0 15px;
     padding-bottom: 80px;
 }
 .create-status .theme-icon{
@@ -882,6 +898,11 @@ img{
     border-radius: 7px;
     cursor: not-allowed;
 }
+.create-status input:valid ~ .post-btn{
+    color: white;
+    cursor: pointer;
+    background-color: #076aff;
+}
 /* 2 */
 .story {
     width: 100%;
@@ -891,6 +912,7 @@ img{
     margin-top: 15px;
     justify-content: space-between;
 }
+
 
 .my-story, .friend-story{
     width: 112px;
@@ -1059,6 +1081,10 @@ img{
 .post-mid img{
     width: 100%;
 }
+.post-mid p{
+    padding:0 15px;
+    margin-bottom: 5px;
+}
 .post-bottom{
     padding:0 10px;
     margin: -4px 10px;
@@ -1098,6 +1124,7 @@ img{
     align-items: center;
     margin-bottom: 10px;
     cursor: pointer;
+    position: relative;
 }
 .icon-wrap{
     margin: 5px 0 ;
@@ -1129,6 +1156,35 @@ img{
 }
 .comment{
 
+}
+.post-icon .hidden-icon{
+        position: absolute;
+        display: flex;
+        top:-85%;
+        left: 0%;
+        border-radius: 100px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        z-index: -1;
+        opacity: 0;
+        transform: translateY(30px);
+}
+.post-icon .icon-like-wrap:hover .hidden-icon{
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay:0.5s ;
+    transform: translateY(0px);
+
+}
+.post-icon .hidden-icon img{
+    width: 40px;
+    margin: 5px 5px;
+    ;
+}
+.post-icon .hidden-icon img:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s;
 }
 /* hide-show */
 .hide{
@@ -1330,24 +1386,24 @@ img{
     height: 45px;
     border-radius: 50%;
     background-color: white;
-    margin: 10px;
+    margin:0 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 0 2px #7b71710f;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .chat-bubble .write-box i{
     font-size:20px;
 }
 .chat-bubble .online{
-    margin: 0 10px;
+    margin:5px 10px;
 }
 .chat-bubble .online img{
     width: 45px;
     height: 45px;
     border-radius: 50%;
     padding: 0;
-    box-shadow: 0px 0px 0 2px #7b71710f;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
 }
 .chat-bubble .online::after {
@@ -1363,4 +1419,23 @@ img{
     border-color: rgb(255, 255, 255);
     border-image: initial;
     border-radius: 50%;
+}
+/* .chat-bubble .online::before {
+    content: "";
+    width: 100px;
+    height: 12px;
+    position: absolute;
+    background-color: white;
+} */
+.chat-bubble .online .close-btn{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: -4px;
+    background-color: white;
+    z-index: 100;
+    display: none;
+}
+.chat-bubble:hover .online .close-btn{
+    display: inline;
 }

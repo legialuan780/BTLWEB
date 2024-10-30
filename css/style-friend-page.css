@@ -345,13 +345,15 @@ a{
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-wrap: wrap;
+    gap: 15px;
 }
 .people{
     width: 200px;
     margin-bottom: 15px;
     background-color: #ffffff;
+    
 }
 .people-img img{
     width: 200px;
