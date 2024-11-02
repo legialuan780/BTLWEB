@@ -4,8 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Đăng ký Facebook</title>
-        <link rel="shortcut icon" href="/img/2023_Facebook_icon.svg" type="image/x-icon">
-        <link rel="stylesheet" href="/css/register.css">
+        <link rel="shortcut icon" href="img/2023_Facebook_icon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="css/register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     </head>
     
     <body>
@@ -29,10 +31,10 @@
                     </div>
                 
                     <div class="birthday">
-                        <p class="font-sub">Ngày sinh</p>
+                        <p class="font-sub">Ngày sinh <i class="fa-solid fa-circle-question"></i></p>
                         <div class="birthday2">
                             <div class="day">
-                                <select name="" id="">
+                                <select name="" >
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
@@ -67,7 +69,7 @@
                                 </select>
                             </div>
                             <div class="month">
-                                <select name="" id="">
+                                <select name="" >
                                     <option value="">Tháng 1</option>
                                     <option value="">Tháng 2</option>
                                     <option value="">Tháng 3</option>
@@ -83,7 +85,7 @@
                                 </select>
                             </div>
                             <div class="year">
-                                <select name="" id="">
+                                <select name="" >
                                     <option value="">2000</option>
                                     <option value="">2001</option>
                                     <option value="">2002</option>
@@ -102,21 +104,34 @@
                     </div>
                     <div class="gender">
                         <div class="gender-title">
-                            <p class="font-sub">Giới tính</p>
+                            <p class="font-sub">Giới tính <i class="fa-solid fa-circle-question"></i></p>
                         </div>
                         <div class="f-gender">
                             <div class="w-gender">
                                 <label for="Nữ">Nữ</label>
-                                <input type="radio" name="gender" id="Nữ" >
+                                <input type="radio" name="gender" id="women" >
                             </div>
                             <div class="s-center">
                                 <label for="Nam">Nam</label>
-                                <input type="radio" name="gender" id="Nam">
+                                <input type="radio" name="gender" id="men">
                             </div>
                             <div class="custom-gender">
                                 <label for="Khác">Tùy chỉnh</label>
-                                <input type="radio" name="gender" id="Khác">
+                                <input type="radio" name="gender" id="other">
                             </div>
+                        </div>
+
+                        <div class="hidden">
+                            <select name="" id="" class="title">
+                                <option value="" label="Chọn danh xưng" disabled selected></option>
+                                <option value="">Cô ấy: "Chúc cô ấy sinh nhật vui vẻ!"</option>
+                                <option value="">Anh ấy: "Chúc anh ấy sinh nhật vui vẻ!"</option>
+                                <option value="">Họ: "Chúc họ sinh nhật vui vẻ!"</option>
+                            </select>
+                            <div class="font-sub">
+                                <p>Danh xưng của bạn hiển thị với tất cả mọi người.</p>
+                            </div>
+                            <input type="text" placeholder="Giới tính (không bắt buộc)">
                         </div>
                         <div class="email">
                             <input type="text" placeholder="Số di động hoặc email" required>
@@ -133,37 +148,66 @@
                         <button>Đăng ký</button>
                     </div>   
                     <div class="login">
-                        <a href="/login.html">Bạn đã có tài khoản ư ?</a>
+                        <a href="login.html">Bạn đã có tài khoản ư?</a>
                     </div>
                 </div>
             </div>
         </form >
 
-        <main>
-            <div class="page-footer-wrap"></div>
-                    <div class="page-footer">
-                        <div class="page-footer-top">
-                            <ul>
-                                <li>Tiếng Việt</li>
-                                <li><a href="#">English(UK)</a></li>
-                                <li><a href="#">中文(台灣)</a></li>
-                                <li><a href="#">한국어</a></li>
-                                <li><a href="#">日本語</a></li>
-                                <li><a href="#">Français (France)</a></li>
-                                <li><a href="#">ภาษาไทย</a></li>
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Português (Brasil)</a></li>
-                                <li><a href="#">Deutsch</a></li>
-                                <li><a href="#">Italiano</a></li>
-                                <li><a href="#"><i class="fa-solid fa-plus"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="page-footer-center"></div>
-                        <div class="page-footer-bottom"></div>
-                        <div class="copyright"></div>
-                    </div>
+        <div class="page-footer-wrap">
+            <div class="page-footer">
+                <div class="page-footer-top">
+                    <span>Tiếng Việt</span>
+                    <a href="#">English(UK)</a>
+                    <a href="#">中文(台灣)</a>
+                    <a href="#">한국어</a>
+                    <a href="#">日本語</a>
+                    <a href="#">Français (France)</a>
+                    <a href="#">ภาษาไทย</a>
+                    <a href="#">Español</a>
+                    <a href="#">Português (Brasil)</a>
+                    <a href="#">Deutsch</a>
+                    <a href="#">Italiano</a>
+                    <i class="fa-solid fa-plus"></i>
                 </div>
-        </main> 
+                <div class="page-footer-center">
+                    <a href="#">Đăng ký</a>
+                    <a href="#">Đăng nhập</a>
+                    <a href="#">Messenger</a>
+                    <a href="#">Facebook Lite</a>
+                    <a href="#">Video</a>
+                    <a href="#">Địa điểm</a>
+                    <a href="#">Trò chơi</a>
+                    <a href="#">Marketplace</a>
+                    <a href="#">Meta Pay</a>
+                    <a href="#">Cửa hàng trên Meta</a>
+                    <a href="#">Meta Quest</a>
+                    <a href="#">Ray-Ban Meta</a>
+                    <a href="#">Meta AI</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Threads</a>
+                    <a href="#">Chiến dịch gây quỹ</a>
+                    <a href="#">Dịch vụ</a>
+                    <a href="#">Trung tâm thong tin bỏ phiếu</a>
+                    <a href="#">Chính sách quyền riêng tư</a>
+                    <a href="#">Trung tâm quyền riêng tư</a>
+                    <a href="#">Nhóm</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Tạo quảng cáo</a>
+                    <a href="#">Tạo trang</a>
+                    <a href="#">Nhà phát triển</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Cookie</a>
+                    <a href="#">Lựa chọn quảng cáo</a>
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Trợ giúp</a>
+                    <a href="#">Tải thông tin liên hệ & đối tượng không phải người dùng</a>
+                </div>
+                <div class="copyright">
+                    <p>Meta &copy; 2024</p>
+                </div>
+            </div>
+        </div>  
     </body>
-    
+    <script src="js/register.js"></script>
 </html>

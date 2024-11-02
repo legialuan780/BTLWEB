@@ -1,8 +1,15 @@
 const showProfile=document.querySelector('#showProfile')
+const cardWrap=document.querySelector('#cardWrap')
+const cardMess=document.querySelector("#cardMess")
+const cardNotice= document.querySelector('#cardNotice')
+
+cardMess.style.display='none'
+cardNotice.style.display='none'
+cardWrap.style.display="none"
+
 showProfile.addEventListener('click', function(){
     cardMess.style.display='none'
     cardNotice.style.display='none'
-    const cardWrap=document.querySelector('#cardWrap')
     if (cardWrap.style.display==='none'){
         cardWrap.style.display='flex'
     }
@@ -16,7 +23,6 @@ const showMess =document.querySelector("#showMess")
 showMess.addEventListener("click",function(){
     cardWrap.style.display='none'
     cardNotice.style.display='none'
-    const cardMess=document.querySelector("#cardMess")
     if (cardMess.style.display ==="none"){
         cardMess.style.display ="flex"
     }
@@ -30,15 +36,14 @@ const showNotice= document.querySelector('#notice')
 showNotice.addEventListener('click', function(){
     cardWrap.style.display='none'
     cardMess.style.display='none'
-    const cardNotice= document.querySelector('#cardNotice')
     if (cardNotice.style.display === 'none'){
         cardNotice.style.display='flex'
-
     }
     else{
         cardNotice.style.display='none'
     }
 })
+
 // create status
 const showStatus = document.querySelector('.status-input')
 showStatus.addEventListener('click', function(){
@@ -129,9 +134,10 @@ const chatBubbleWrap = document.querySelector(".chat-bubble-wrap")
 onlineLists.forEach((onlineList)=>{
     onlineList.addEventListener('click', ()=>{
         var onlineImg =onlineList.querySelector('img').src
+        var onlineName = onlineList.querySelector('p').textContent
         const chatBubble= document.createElement('div')
         chatBubble.classList.add('chat-bubble')
-        chatBubble.innerHTML='<div ><div class="online"><img src="'+onlineImg+'" alt=""><img class="close-btn" src="/img/close.png" id="close-chat"></div></div>';
+        chatBubble.innerHTML='<div class="online"><img src="'+onlineImg+'" alt=""><img class="close-btn" src="/img/close.png" id="close-chat"><div class="title"><p>'+onlineName+'</p><p></p></div></div>';
         chatBubbleWrap.append(chatBubble)
         //close
         const closeChatBtn = chatBubble.querySelector("#close-chat");
