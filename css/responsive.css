@@ -1,8 +1,7 @@
-@media (max-width:1000px){
-    .left-sidebar, .right-sidebar{
+@media(max-width:1100px){
+    .left-sidebar{
         display: none;
     }
-
     .header-search input{
         display: none;
     }
@@ -14,7 +13,22 @@
         justify-content: flex-start;
         margin: 0;
     }
-    .container .center-sidebar{
-        position: relative;
+    .center-sidebar{
+        left: 20%;
+    }
+}
+
+@media(max-width:890px){
+    .right-sidebar{
+        display: none !important;
+    }
+    .center-sidebar{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media(max-width:700px){
+    .header-mid{
+        display: none;
     }
 }

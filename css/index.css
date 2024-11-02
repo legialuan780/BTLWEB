@@ -1083,7 +1083,7 @@ img{
 }
 .post-mid p{
     padding:0 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .post-bottom{
     padding:0 10px;
@@ -1116,8 +1116,7 @@ img{
     position: relative;
     left: -4px;
 }
-.number-right{
-}
+
 .post-icon{
     display: flex;
     justify-content: center;
@@ -1154,9 +1153,7 @@ img{
 .hide-text{
     display: none;
 }
-.comment{
 
-}
 .post-icon .hidden-icon{
         position: absolute;
         display: flex;
@@ -1305,6 +1302,7 @@ img{
     align-items: center;
     margin-bottom: 0px;
     border-radius:5px ;
+    cursor: pointer;
 }
 .online-list:hover{
     background-color: #E4E6E9;
@@ -1420,13 +1418,7 @@ img{
     border-image: initial;
     border-radius: 50%;
 }
-/* .chat-bubble .online::before {
-    content: "";
-    width: 100px;
-    height: 12px;
-    position: absolute;
-    background-color: white;
-} */
+
 .chat-bubble .online .close-btn{
     position: absolute;
     width: 17px;
@@ -1436,6 +1428,33 @@ img{
     z-index: 100;
     display: none;
 }
-.chat-bubble:hover .online .close-btn{
+.chat-bubble:hover  .online .close-btn, .chat-bubble:hover .online .title{
     display: inline;
+}
+.chat-bubble .online .title{
+    width: fit-content;
+    height: 45px;
+    background-color: white;
+    position: absolute;
+    top: -50%;
+    right: 140%;
+    transform: translate(0, 50%);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+    display: none;
+}
+.chat-bubble .online .title::after{
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent transparent white;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+
+}
+.chat-bubble .online .title p{
+    text-wrap: nowrap;
+    padding: 4px 20px 4px 10px;
+    font-weight: 500;
 }

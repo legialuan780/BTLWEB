@@ -26,7 +26,6 @@ a{
     width: 320px;
     display: flex;
     align-items: center;
-    /* justify-content: space-evenly; */
 }
 
 .header-left img {
@@ -34,7 +33,7 @@ a{
     padding: 11px 10px 7px 16px;
 }
 .header-search{
-    width: 70%;
+    width: fit-content;
     display: flex;
     align-items: center;
     background-color: #eff2f5;
@@ -42,18 +41,10 @@ a{
     border-radius: 200px;
     font-size: 15px;
 }
-.header-search input{
-    border: none;
-    outline: 0;
-    background-color: transparent;
-    padding-left: 5px;
-    font-size: 15px;
-}
 .header-search i {
-    font-size: 15px;
+    font-size: 15px;    
     color: gray;
-    margin-left: 3px;
-    margin-right: 4px;
+    padding: 3px;
 }
 .header-mid{
     display: flex;
@@ -172,7 +163,7 @@ a{
     /* background-color: #2e81f4; */
     box-shadow: 0 2px 0 2px rgba(0, 0, 0, 0.244);
 }
-.left-sidebar .title, .main-content .title{
+.left-sidebar .title{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -187,14 +178,38 @@ a{
     font-size: 22px;
 }
 
+.search{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 7px 10px ;
+    border-radius: 200px;
+    font-size: 15px;
+    margin:0 10px 15px 10px;
+}
+.search input{
+    border: none;
+    outline: 0;
+    background-color: transparent;
+    padding-left: 5px;
+    font-size: 15px;
+}
+.search i {
+    font-size: 15px;
+    color: gray;
+    padding: 3px;
+}
+
 .menu-content{
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 10px 10px;
     margin:0 10px;
 }
 .menu-content:hover{
-    background-color: #e5e5ed;
+    background-color: #eff2f5;
     border-radius: 10px;
 }
 .icon-backround{
@@ -204,10 +219,10 @@ a{
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #e5e5ed;
+    background-color: #eff2f5;
 }
 .menu-content .icon-backround img{
-    width: 36px;
+    width: 25px;
     border-radius: 50%;
 }
 .menu-content .icon-backround i{
@@ -224,7 +239,7 @@ a{
 }
 #home i{color: white;}
 #home{
-    background-color: #e5e5ed;
+    background-color: #eff2f5;
     border-radius: 10px;
 }
 #right-icon{ 
@@ -253,13 +268,13 @@ a{
 .main-content .title a:hover{
     background-color: #e5e5ed;
 }
-.people-wrap{
+.video-wrap{
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    /* justify-content: space-around; */
-    flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .people{
     width: 200px;
@@ -276,7 +291,7 @@ a{
     padding: 10px;
     padding-top: 0;
 }
-.people-name, .people-friend,.show, .add-button, .remove-button{margin: 6px 0;}
+.people-name, .people-friend, .add-button, .remove-button{margin: 6px 0;}
 .people-name p{
     font-size: 17px;
     font-weight: 500;
@@ -284,21 +299,18 @@ a{
 .people-name p:hover{
     text-decoration: underline;
 }
-.people-friend, .show{
+.people-friend{
     display: flex;
     align-items: center;
     height: 16px;
     margin-bottom: 12px;
 }
-.people-friend p, .show p{
+.people-friend p{
     font-size: 15px;
     color: gray;
     margin-left: 5px;
 }
-.people-friend .text{
-    margin: 0;
-}
-.people-friend img, .show img{
+.people-friend img{
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -317,7 +329,6 @@ a{
     font-size: 15px;
     color: #2e81f4;
     font-weight: 500;
-    cursor: pointer;
 }
 .remove-button{
     background-color: #e5e6eb;
@@ -329,7 +340,219 @@ a{
 .remove-button:hover{
     background-color: #d2d3d7;
 }
+/* begin video post */
+.post{
+    width: 750px;
+    background-color: white;
+    border-radius: 7px;
+    margin: 10px 0;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 
+}
+.post-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+.post-top-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+.post-top-left img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.name-time p{
+    margin-left: 7px;
+    cursor: pointer;
+}
+.name{
+    font-size: 15px;
+    font-weight: 500;
+}
+.time{
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    color: gray;
+}
+.time span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    position: relative;
+    top: 1px;
+}
+.time i{
+    font-size: 12px;
+    margin: 2px;
+}
+.name-time .name:hover, .name-time .time p:hover{
+    text-decoration: underline;
+}
+#size2px{
+    font-size: 2px;
+}
+.post-top-right{
+    display: flex;
+}
+.background-icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-icon:hover{
+    background-color: #e5e5ed7a;
+}
+.background-icon i{
+    font-size: 20px;
+    color: gray;
+}
+.post-mid img{
+    width: 100%;
+}
+.post-mid p{
+    padding:0 15px;
+    margin-bottom: 5px;
+}
+.post-bottom{
+    padding:0 10px;
+    margin: -4px 10px;
+}
+.number-like{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+}
+.number-like img{
+    width: 18px;
+    position: relative;
+    top: 4px;
+}
+.number-like span{
+    font-size: 15px;
+    color: gray;
+}
+.number-left img:first-child{
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 0 0 2px white;
+    border-radius: 50%;
+}
+.number-left img:nth-child(2){
+    position: relative;
+    left: -4px;
+}
+.number-right{
+    display: flex;
+    align-items: center;
+}
+.post-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.icon-wrap{
+    margin: 5px 0 ;
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.icon-wrap:hover{
+    background-color: #e5e5ed;
+    border-radius: 5px;
+}
+.post-icon .icon-wrap img{
+    width: 18px;
+    margin-right:10px ;
+} 
+.like-wrap{
+    position: relative;
+}
+.like1{
+    display: flex;
+}
+.like2{
+    display: none;
+}
+.hide-text{
+    display: none;
+}
+.comment{
+
+}
+.post-icon .hidden-icon{
+        position: absolute;
+        display: flex;
+        top:-85%;
+        left: 0%;
+        border-radius: 100px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        z-index: -1;
+        opacity: 0;
+        transform: translateY(30px);
+}
+.post-icon .icon-like-wrap:hover .hidden-icon{
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay:0.5s ;
+    transform: translateY(0px);
+
+}
+.post-icon .hidden-icon img{
+    width: 40px;
+    margin: 5px 5px;
+    ;
+}
+.post-icon .hidden-icon img:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+
+.post-mid video{
+    width: 100%;
+    height: auto;
+}
+
+.post-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+.post-bottom .number-right .dot i{
+    font-size: 2px;
+    position: relative;
+    top: -4px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+/* hide-show */
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
+/* end video */
 /* chat bubble *****************************************************************/
 .chat-bubble-wrap{
     position: fixed;
@@ -366,6 +589,7 @@ a{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
 }
+
 .chat-bubble .online::after {
     content: "";
     width: 12px;
