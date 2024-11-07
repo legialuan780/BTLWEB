@@ -1,4 +1,4 @@
-- Bài tập lớn môn Thiết kế Web - Thiết kế lại trang web Facebook
+- Bài tập lớn môn Thiết kế Web K64 - Thiết kế lại trang web Facebook
 - Sinh viên thực hiện:
    + Phạm Lê Anh Khoa - MSSV: 6451071035
    + Ngô Thành Khôi - MSSV: 6451071038
